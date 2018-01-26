@@ -30,7 +30,7 @@ public class CWE78_OS_Command_Injection__getQueryString_Servlet_02 extends Abstr
         if (true)
         {
             data = ""; /* initialize data in case id is not in query string */
-            /* POTENTIAL FLAW: Parse id param out of the URL querystring (without using getParameter()) */
+            /* PRAETORIAN: Parse id param out of the URL querystring (without using getParameter()) */
             {
                 StringTokenizer tokenizer = new StringTokenizer(request.getQueryString(), "&");
                 while (tokenizer.hasMoreTokens())
@@ -63,7 +63,7 @@ public class CWE78_OS_Command_Injection__getQueryString_Servlet_02 extends Abstr
             osCommand = "/bin/ls ";
         }
 
-        /* POTENTIAL FLAW: command injection */
+        /* PRAETORIAN: command injection */
         Process process = Runtime.getRuntime().exec(osCommand + data);
         process.waitFor();
 

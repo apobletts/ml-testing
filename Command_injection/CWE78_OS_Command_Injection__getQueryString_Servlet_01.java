@@ -56,7 +56,7 @@ public class CWE78_OS_Command_Injection__getQueryString_Servlet_01 extends Abstr
             osCommand = "/bin/ls ";
         }
 
-        /* POTENTIAL FLAW: command injection */
+        /* PRAETORIAN: command injection */
         Process process = Runtime.getRuntime().exec(osCommand + data);
         process.waitFor();
 
