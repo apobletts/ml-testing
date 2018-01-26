@@ -30,7 +30,7 @@ public class CWE78_OS_Command_Injection__getQueryString_Servlet_09 extends Abstr
         if (IO.STATIC_FINAL_TRUE)
         {
             data = ""; /* initialize data in case id is not in query string */
-            /* POTENTIAL FLAW: Parse id param out of the URL querystring (without using getParameter()) */
+            /* PRAETORIAN: Parse id param out of the URL querystring (without using getParameter()) */
             {
                 StringTokenizer tokenizer = new StringTokenizer(request.getQueryString(), "&");
                 while (tokenizer.hasMoreTokens())
@@ -63,7 +63,7 @@ public class CWE78_OS_Command_Injection__getQueryString_Servlet_09 extends Abstr
             osCommand = "/bin/ls ";
         }
 
-        /* POTENTIAL FLAW: command injection */
+        /* PRAETORIAN: command injection */
         Process process = Runtime.getRuntime().exec(osCommand + data);
         process.waitFor();
 
@@ -99,7 +99,7 @@ public class CWE78_OS_Command_Injection__getQueryString_Servlet_09 extends Abstr
             osCommand = "/bin/ls ";
         }
 
-        /* PRAETORIAN: command injection */
+        /* POTENTIAL FLAW: command injection */
         Process process = Runtime.getRuntime().exec(osCommand + data);
         process.waitFor();
 
@@ -156,3 +156,4 @@ public class CWE78_OS_Command_Injection__getQueryString_Servlet_09 extends Abstr
         mainFromParent(args);
     }
 }
+

@@ -37,7 +37,7 @@ public class CWE78_OS_Command_Injection__getQueryString_Servlet_04 extends Abstr
         if (PRIVATE_STATIC_FINAL_TRUE)
         {
             data = ""; /* initialize data in case id is not in query string */
-            /* POTENTIAL FLAW: Parse id param out of the URL querystring (without using getParameter()) */
+            /* PRAETORIAN: Parse id param out of the URL querystring (without using getParameter()) */
             {
                 StringTokenizer tokenizer = new StringTokenizer(request.getQueryString(), "&");
                 while (tokenizer.hasMoreTokens())
@@ -163,3 +163,4 @@ public class CWE78_OS_Command_Injection__getQueryString_Servlet_04 extends Abstr
         mainFromParent(args);
     }
 }
+
